@@ -14,43 +14,6 @@ module.exports.getAll = function (req, res,next) {
   res.render('kullaniciDuzenle',{data : kullanici_model});
   }
 
-  module.exports.getUpdate= (req, res)=> {
-     // Validate request
-     if (!req.body) {
-      res.status(400).send({
-        message: "Content can not be empty!"
-      });
-    }
-  
-    // Create a Tutorial
-    const guncelle = new Kullanici_model({
-        kullaniciAdi: req.body.kullaniciAdi,
-        kullaniciSoyadi: req.body.kullaniciSoyadi,
-        kullaniciMail: req.body.kullaniciMail,
-        kullaniciSifre: req.body.kullaniciSifre,
-        kullaniciTel: req.body.kullaniciTel,
-        kullaniciFirma: req.body.kullaniciFirma,
-        kullaniciDurumu: req.body.kullaniciDurumu,
-        kullaniciPozisyon: req.body.kullaniciPozisyon,
-  
-    });
- 
-    // Kullanici_model.updateById( req.params.id,req.body.kullaniciAdi,req.body.kullaniciSoyadi,req.body.kullaniciMail,req.body.kullaniciSifre,req.body.kullaniciTel,req.body.kullaniciFirma,req.body.kullaniciDurumu,req.body.kullaniciPozisyon,function(err,result){
-    //         if (err) throw err;
-            
-    //         //res.render('edit_doctor.ejs',{list:result});
-    //         res.render('kullaniciDuzenle',{data : result? result:[]});
-         
-        
-            
-    //     });
-
-
-   
-    }
-  
-
-
   module.exports.addForm= (req, res)=> {
     res.render('kullaniciEkle');
 }

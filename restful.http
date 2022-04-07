@@ -1,0 +1,15 @@
+@BASE_URL=http://localhost:5001
+
+
+POST {{BASE_URL}}/kullanicilar/kullaniciDuzenle/35
+{"kullaniciAdi":"senas","kullaniciSoyadi":"gtms"}
+
+###
+
+GET  {{BASE_URL}}/kullanicilar/kullaniciDuzenle/35
+
+# ###
+# GET {{BASE_URL}}/kullanicilar/kullaniciEkle
+
+# ###
+# POST  {{BASE_URL}}/kullanicilar/kullaniciEkle

@@ -27,7 +27,7 @@ module.exports.getAll = function (req, res,next) {
           });
         }
       
-        // Create a Tutorial
+   
         const yenicihaz = new cihazlarModel({
             cihazAdi: req.body.cihazAdi,
             cihazSeriNo: req.body.cihazSeriNo,
@@ -39,12 +39,12 @@ module.exports.getAll = function (req, res,next) {
       
         });
       
-        // Save Tutorial in the database
+
         cihazlarModel.create(yenicihaz, (err, data) => {
           if (err)
             res.status(500).send({
               message:
-                err.message || "Some error occurred while creating the Tutorial."
+                err.message || "Some error occurred while creating"
             });
           else { 
             res.render('cihazEkle', { alert: 'User added successfully.' });

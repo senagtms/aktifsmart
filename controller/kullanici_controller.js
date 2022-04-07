@@ -29,7 +29,7 @@ module.exports.getAll = function (req, res,next) {
           });
         }
       
-        // Create a Tutorial
+   
         const yeniKullanici = new Kullanici_model({
             kullaniciAdi: req.body.kullaniciAdi,
             kullaniciSoyadi: req.body.kullaniciSoyadi,
@@ -42,12 +42,12 @@ module.exports.getAll = function (req, res,next) {
       
         });
       
-        // Save Tutorial in the database
+       
         Kullanici_model.create(yeniKullanici, (err, data) => {
           if (err)
             res.status(500).send({
               message:
-                err.message || "Some error occurred while creating the Tutorial."
+                err.message || "Some error occurred while creating"
             });
           else { 
             res.render('kullaniciEkle', { alert: 'User added successfully.' });

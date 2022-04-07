@@ -1,0 +1,87 @@
+<%- include('./partials/header'); %>
+
+
+<section id="main-content">
+  <section class="wrapper">
+ <div class="row mt">
+  <div class="col-lg-12">
+    <h4><i class="fa fa-angle-right"></i>Kullanıcı </h4>
+    <div class="form-panel">
+      <div class="form">
+   
+        <form class="cmxform form-horizontal style-form" method="POST" action="/kullanicilar/kullaniciDuzenle/">
+          <div class="form-group ">
+            <label for="kullaniciAdi" class="control-label col-lg-2">Kullanıcı Adı</label>
+            <div class="col-lg-10">
+              <input class=" form-control" name="kullaniciAdi" type="text" />
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="kullaniciSoyadi" class="control-label col-lg-2">Kullanıcı Soyadı</label>
+            <div class="col-lg-10">
+              <input class=" form-control" name="kullaniciSoyadi" type="text" />
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="kullaniciTel" class="control-label col-lg-2">Kullanıcı Telefon</label>
+            <div class="col-lg-10">
+              <input class="form-control " name="kullaniciTel" type="number" />
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="kullaniciSifre" class="control-label col-lg-2">Kullanıcı Şifre</label>
+            <div class="col-lg-10">
+              <input class="form-control " name="kullaniciSifre" type="text" />
+            </div>
+          </div>
+         
+          <div class="form-group ">
+            <label for="kullaniciMail" class="control-label col-lg-2">Kullanıcı Email</label>
+            <div class="col-lg-10">
+              <input class="form-control " name="kullaniciMail" type="email" />
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="kullaniciFirma" class="control-label col-lg-2">Kullanıcı Firma</label>
+            <div class="col-lg-10">
+              <input class="form-control " name="kullaniciFirma" type="text" />
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="kullaniciPozisyon" class="control-label col-lg-2">Kullanıcı Pozisyon</label>
+            <div class="col-lg-10">
+              <input class="form-control " name="kullaniciPozisyon"  type="text" />
+            </div>
+          </div>
+          <div class="form-group ">
+            <label for="kullaniciDurumu" class="control-label col-lg-2 col-sm-3" name="kullaniciDurumu">Kullanıcı Durumu</label>
+            <div class="col-lg-10 col-sm-9">
+              <select class="form-control kullaniciDurumu">
+
+                <option value="1">Aktif</option>
+                <option value="0">Pasif</option>
+              
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+              <a href="/kullanicilar"><button  id="kullaniciDuzenle" class="btn btn-theme" type="submit">Kaydet</button></a>
+              <a href="/kullanicilar"><button class="btn btn-theme04" type="button">Vazgeç</button></a>
+  
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <!-- /form-panel -->
+  </div>
+    </div>
+    <!-- /col-lg-12 -->
+ 
+</section>
+
+</section>
+<%- include('./partials/footer'); %>

@@ -1,0 +1,75 @@
+<%- include('./partials/header'); %>
+
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT 
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+   
+        <section id="main-content">
+      <section class="wrapper">
+        <div class="row mt">
+          
+          <div class="col-md-12">
+           
+            <div class="content-panel">
+              
+                <div id="container-btn">
+                <button href="cihazlar/cihazdetay/sensorEkle" type="submit" class="btn btn-info ekle"><i class="fa fa-plus"></i><a href="/cihazlar/cihazdetay/sensorEkle"> Sensör Ekle</a></button>
+                <div class="sensoralarm">
+                <button href="./cihazdetay/alarm" type="button" class="btn btn-primary btt" ><svg class="icon alarm"></svg><a href="./cihazdetay/alarm"><span class="span">Alarm</span></a></button>
+                <form method="POST" action="/cihazlar/:id" >
+                  <!-- <% for(var i = 0; i < data.length; i++) { %>
+                    <% let sensorDurumu = g.checked ? '1' : '0' %>      
+                <label class="switch"><input type="checkbox" id="sensorTipID" name="sensorDurumu" ><span  class="slider round" value="<%=data[i].sensorTipID%>" <%=sensorDurumu%> onChange="this.form.submit()" ></span></label>
+                <%}%> -->
+              </div>
+              <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt "  ><svg class="icon1" > </svg><a><span class="span">Nem</span></a></button>
+                   <label class="switch"><input type="checkbox" name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+                  <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt " ><svg class="icon2" > </svg><a><span class="span">Sıcaklık</span></a></button>
+                   <label class="switch"><input type="checkbox"  name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+                 <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt " ><svg class="icon3" > </svg><a><span class="span">Yanıcı Gaz</span></a></button>
+                   <label class="switch"><input type="checkbox"  name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+                  <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt " ><svg class="icon4" > </svg><a><span class="span">Siren</span></a></button>
+                   <label class="switch"><input type="checkbox"  name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+                  <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt " > <svg class="icon5" > </svg><a><span class="span">Gaz</span></a></button>
+                   <label class="switch"><input type="checkbox" name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+                  <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt " > <svg class="icon6" > </svg><a><span class="span">Su baskını</span></a></button>
+                   <label class="switch"><input type="checkbox"name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+                  <div class="sensoralarm">
+                   <button type="button" class="btn btn-primary btt" > <svg class="icon7" > </svg><a><span class="span">Kamera</span></a></button>
+                   <label class="switch"><input type="checkbox" name="sensorDurumu"><span class="slider round"></span></label>
+                  </div>
+              </div>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-md-12 -->
+        </div>
+          
+           
+              
+      </section>
+      
+    </section>
+
+    <!-- <script>
+$("#sensorDurumu").change(function() {
+  if(this.checked === true) {
+     $("#durum").submit();
+  }
+})
+
+    </script> -->
+    <%- include('./partials/footer'); %>

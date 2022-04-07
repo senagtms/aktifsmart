@@ -1,0 +1,65 @@
+<%- include('./partials/header'); %>
+  
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row mt">
+          <div class="col-md-12">
+            <div class="content-panel">
+              
+              <table class="table table-striped table-advance table-hover">
+                <h4><i class="fa fa-angle-right"></i> Cihazlar</h4>
+                <button href="/cihazlar/cihazEkle" type="submit" class="btn btn-info ekle"><i class="fa fa-plus"></i><a href="/cihazlar/cihazEkle"> Cihaz Ekle</a></button>
+
+                <thead>
+                  <tr>
+                    <th> #</th>
+                    <th>Cihaz Adı</th>
+                    <th>Cihaz Seri No</th>
+                    <th>Cihaz Mac Adres</th>
+                    <th>Cihaz Domain</th>
+                    <th>Cihaz Kodu</th>
+                    <th>Cihaz Adres</th>
+                    <th>Cihaz Durum</th>
+                    <th>Cihaz Bilgi</th>
+                  
+                   
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(var i = 0; i < data.length; i++) { %>
+                  <tr>
+                    <td><%= data[i].cihazID%> </td>
+                    <td class="hidden-phone"><%= data[i].cihazAdi%></td>
+                    <td><%= data[i].cihazSeriNo%> </td>
+                    <td><%= data[i].cihazMac%></td>
+                    <td><%= data[i].cihazKodu%></td>
+                    <td><%= data[i].cihazDomain%></td>
+                    <td><%= data[i].cihazAdresi%></td>
+                    <%if(data[i].cihazDurumu==1){%><td>Aktif</td><%} else{ %><td>Pasif</td><%}%>
+                    <td>
+                      
+                      <a  href="/cihazlar/<%=data[i].cihazID%>"  class="btn btn-primary edit-btt btn-xs" data-toggle="tooltip"><i class="fa fa-pencil"> Cihaz Detay</i></a>
+                    
+                      <button class="btn btn-danger delete-btt btn-xs"><i class="fa fa-trash-o ">  Sil</i></button>
+                    </td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+            <!-- /content-panel -->
+          </div>
+          <!-- /col-md-12 -->
+        </div>
+          
+           
+              
+      </section>
+      
+    </section>
+    <%- include('./partials/footer'); %>

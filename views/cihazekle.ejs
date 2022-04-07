@@ -1,0 +1,82 @@
+<%- include('./partials/header'); %>
+    <section id="main-content">
+      <section class="wrapper">
+      
+        <!-- FORM VALIDATION -->
+        <div class="row mt">
+            <div class="col-lg-10">
+              <h4><i class="fa fa-angle-right"></i> Cihaz Ekleme</h4>
+              <div class="form-panel">
+                <div class=" form">
+                  <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" action="/cihazlar/cihazEkle">
+                    <div class="form-group ">
+                      <label for="cihazAdi" class="control-label col-lg-2">Cihaz Adı</label>
+                      <div class="col-lg-6">
+                        <input class=" form-control"  name="cihazAdi" type="text" required />
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="cihazSeriNo" class="control-label col-lg-2">Cihaz Seri No</label>
+                        <div class="col-lg-6">
+                          <input class=" form-control" name="cihazSeriNo" type="text" required />
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="cihazMac" class="control-label col-lg-2">Cihaz Mac Adres </label>
+                        <div class="col-lg-6">
+                          <input class=" form-control"  name="cihazMac" type="text" required />
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="cihazDomain" class="control-label col-lg-2">Cihaz Domain</label>
+                        <div class="col-lg-6">
+                          <input class=" form-control" name="cihazDomain" type="text" required />
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="cihazKodu" class="control-label col-lg-2">Cihaz Kodu</label>
+                        <div class="col-lg-6">
+                          <input class=" form-control"  name="cihazKodu" type="text" required />
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="cihazadres" class="control-label col-lg-2">Cihaz Adres</label>
+                        <div class="col-lg-6">
+                          <input class=" form-control"  name="cihazadres" type="text" required />
+                        </div>
+                      </div>
+                      <div class="form-group ">
+                        <label for="cihazDurumu" class="control-label col-lg-2" name="cihazDurumu">Cihaz Durumu</label>
+                        <div class="col-lg-6">
+                          <select class="form-control cihazDurumu">
+            
+                            <option value="1">Aktif</option>
+                            <option value="0">Pasif</option>
+                          
+                          </select>
+                        </div>
+                      </div>
+                      
+                        <div class="form-group">
+                          <div class="col-lg-offset-2 col-lg-10">
+                            <a href="/cihazlar"><button  id="kullaniciEkle" class="btn btn-theme" type="submit">Kaydet</button></a>
+                            <a href="/cihazlar"><button class="btn btn-theme04" type="button">Vazgeç</button></a>
+                
+                
+                          </div>
+                          </div>
+                    </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <!-- /form-panel -->
+            </div>
+            <!-- /col-lg-12 -->
+         
+      </section>
+      
+    </section>
+
+  
+    <%- include('./partials/footer'); %>

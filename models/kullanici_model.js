@@ -41,35 +41,27 @@ Kullanici.create = function (yeniKullanici, result) {
     result(null, { id: res.insertId, ...yeniKullanici });
   });
 };
-
-Kullanici.findById = function (id) {
-  const sql = `SELECT * FROM vt_kullanici WHERE kullaniciID =${id}`;
-  mysql.query(sql, (err, data) => {
-    if (err) {
-      console.log("error: ", err);
-      return err;
-    } else {
-      console.log("Kullanici : ", data);
-      return data;
+Kullanici.findById = function (id,result) {
+  mysql.query("Select * from vt_kullanici where kullaniciID = ? ", id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
     }
-  });   
+    else{
+        result(null, res);
+    }
+});  
 };
-Kullanici.updateById = function(id, update, result){
+Kullanici.updateById = function(id, update, result){  
 
-  mysql.query(`UPDATE vt_kullanici SET kullaniciAdi = ?, kullaniciSoyadi = ?, kullaniciMail = ?, kullaniciSifre = ?,kullaniciTel = ?,kullaniciFirma=?, kullaniciDurumu=?, kullaniciPozisyon=? WHERE kullaniciID = ?`,[update.kullaniciAdi, update.kullaniciSoyadi, update.kullaniciMail,update.kullaniciSifre,update.kullaniciFirma,update.kullaniciDurumu,update.kullaniciPozisyon,id], 
+  mysql.query(`UPDATE vt_kullanici SET  kullaniciAdi = ?, kullaniciSoyadi = ?, kullaniciMail = ?, kullaniciSifre = ?,kullaniciTel = ?,kullaniciFirma=?, kullaniciDurumu=?,kullaniciPozisyon=?  WHERE kullaniciID = ${id}`,[update.kullaniciAdi, update.kullaniciSoyadi, update.kullaniciMail,update.kullaniciSifre,update.kullaniciTel,update.kullaniciFirma,update.kullaniciDurumu,update.kullaniciPozisyon],     
   function (err, res) {
-    if (err) {
-      console.log("error: ", err);
-      result(null, err);
-    } else {
-      ret(null, res);
-    }
-  }   
-
-  );
+    if(err) {
+            console.log("error: ", err);
+            result(null, err);
+        }else{  
+            result(null, res);
+        }
+      }); 
 };
-//   var query = "UPDATE 'vt_kullanici' SET `kullaniciAdi`='"+update.kullaniciAdi+"', `kullaniciSoyadi`='"+update.kullaniciSoyadi+"', `kullaniciSifre`='"+update.kullaniciSifre+"', `kullaniciTel`='"+update.kullaniciTel+"',`kullaniciFirma`='"+update.kullaniciFirma+"',`kullaniciDurumu`='"+update.kullaniciDurumu+"',`kullaniciPozisyon`='"+update.kullaniciPozisyon+"' where kullaniciID="+id;
-//   mysql.query(query,callback);
-//   console.log(query);
-
 module.exports = Kullanici;

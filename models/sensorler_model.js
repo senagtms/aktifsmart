@@ -35,3 +35,106 @@ const Sensorler = function (vt_sensorler) {
 
 
 
+
+
+/************sensörleri filtreleme ************ */
+  Sensorler.alarmfindAll=function(id,result) {
+
+
+    mysql.query(`Select * from vt_sensorler where sensorTipID =1 AND SensorCihazID=?`,id, function (err, res) {             
+      if(err) {
+          console.log("error: ", err);
+          result(err, null);
+      }
+      else{
+          result(null, res);
+      } 
+  }); 
+ }
+
+ Sensorler.nemfindAll=function(id,result) {
+
+
+  mysql.query(`Select * from vt_sensorler where sensorTipID =2 AND SensorCihazID=?`,id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
+    }
+    else{
+        result(null, res);
+    } 
+}); 
+}
+
+Sensorler.sicaklikfindAll=function(id,result) {
+
+
+  mysql.query(`Select * from vt_sensorler where sensorTipID =3 AND SensorCihazID=?`,id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
+    }
+    else{
+        result(null, res);
+    } 
+}); 
+}
+Sensorler.yaniciGazfindAll=function(id,result) {
+
+
+  mysql.query(`Select * from vt_sensorler where sensorTipID =4 AND SensorCihazID=?`,id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
+    }
+    else{
+        result(null, res);
+    } 
+}); 
+}
+  
+Sensorler.sirenfindAll=function(id,result) {
+
+
+  mysql.query(`Select * from vt_sensorler where sensorTipID =5 AND SensorCihazID=?`,id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
+    }
+    else{
+        result(null, res);
+    } 
+}); 
+}
+  
+Sensorler.gazfindAll=function(id,result) {
+
+
+  mysql.query(`Select * from vt_sensorler where sensorTipID =6 AND SensorCihazID=?`,id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
+    }
+    else{
+        result(null, res);
+    } 
+}); 
+}
+
+Sensorler.suBaskinifindAll=function(id,result) {
+
+
+  mysql.query(`Select * from vt_sensorler where sensorTipID =6 AND SensorCihazID=?`,id, function (err, res) {             
+    if(err) {
+        console.log("error: ", err);
+        result(err, null);
+    }
+    else{
+        result(null, res);
+    } 
+}); 
+}
+  
+  
+  
+module.exports = Sensorler;

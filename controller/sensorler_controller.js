@@ -52,3 +52,100 @@ module.exports.getAll = function (req, res) {
     
     });
   };
+
+
+
+
+  /********************************* sensörler için controller ******************************/
+
+
+  module.exports.alarmGetAll = function (req, res) {
+    
+    sensorModel.alarmfindAll(req.params.id, function (err, sensor_model) {
+
+      if (err) res.status(err);
+      // res.json(sensor_model);
+      res.render('./cihazdetay/alarm', {data: sensor_model});
+      
+    });
+    
+    };
+
+    module.exports.nemGetAll = function (req, res) {
+    
+      sensorModel.nemfindAll(req.params.id, function (err, sensor_model) {
+  
+        if (err) res.status(err);
+        // res.json(sensor_model);
+        res.render('./cihazdetay/nem', {data: sensor_model});
+        
+      });
+      
+      };
+
+      
+    module.exports.sicaklikGetAll = function (req, res) {
+    
+      sensorModel.sicaklikfindAll(req.params.id, function (err, sensor_model) {
+  
+        if (err) res.status(err);
+        // res.json(sensor_model);
+        res.render('./cihazdetay/sicaklik', {data: sensor_model});
+        
+      });
+      
+      };
+  
+       
+      module.exports.yaniciGazGetAll = function (req, res) {
+    
+        sensorModel.yaniciGazfindAll(req.params.id, function (err, sensor_model) {
+    
+          if (err) res.status(err);
+          // res.json(sensor_model);
+          res.render('./cihazdetay/yaniciGaz', {data: sensor_model});
+          
+        });
+        
+        };
+
+               
+      module.exports.sirenGetAll = function (req, res) {
+    
+        sensorModel.sirenfindAll(req.params.id, function (err, sensor_model) {
+    
+          if (err) res.status(err);
+          // res.json(sensor_model);
+          res.render('./cihazdetay/siren', {data: sensor_model});
+          
+        });
+        
+        };
+    
+                     
+      module.exports.gazGetAll = function (req, res) {
+    
+        sensorModel.gazfindAll(req.params.id, function (err, sensor_model) {
+    
+          if (err) res.status(err);
+          // res.json(sensor_model);
+          res.render('./cihazdetay/gaz', {data: sensor_model});
+          
+        });
+        
+        };
+      
+    
+    
+        module.exports.suBaskiniGetAll = function (req, res) {
+    
+          sensorModel.suBaskinifindAll(req.params.id, function (err, sensor_model) {
+      
+            if (err) res.status(err);
+            // res.json(sensor_model);
+            res.render('./cihazdetay/suBaskini', {data: sensor_model});
+            
+          });
+          
+          };
+

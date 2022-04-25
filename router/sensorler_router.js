@@ -7,6 +7,9 @@ sensorler_controller.get('/sensorEkle/:id',sensorController.getById);
 sensorler_controller.post('/sensorEkle/:id', sensorController.getCreate);
 
 
+//sensör durumu - aktif/pasif
+sensorler_controller.post('/cihazdetay/alarm/:id', sensorController.sensorUpdate);
+
 sensorler_controller.get('/cihazdetay/alarm/:id',sensorController.alarmGetAll);
 sensorler_controller.get('/cihazdetay/nem/:id',sensorController.nemGetAll);
 sensorler_controller.get('/cihazdetay/sicaklik/:id',sensorController.sicaklikGetAll);

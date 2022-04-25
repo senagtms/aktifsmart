@@ -1,11 +1,6 @@
 const cihazlarModel = require('../models/cihazlar_model');
 
-// module.exports.getCihazdetay= (req, res)=> {
-  
-//   cihazInformation= cihazlarModel.getCihaz(req.params.id);
-  
-//   res.render('cihazdetay',{data:cihazInformation});
-// }
+
 module.exports.getAll = function (req, res,next) {
 
     cihazlarModel.findAll(function (err, cihazlar_model) {

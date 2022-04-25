@@ -34,6 +34,24 @@ const Sensorler = function (vt_sensorler) {
   };
 
 
+  /********************** toogle switch************************** */
+
+  Sensorler.updatee = function(id,durum, result){
+    mysql.query(`UPDATE vt_sensorler SET sensorDurumu =? WHERE SensorCihazID=${id} `,[durum.sensorDurumu], function (err, res) {
+            if(err) {
+                console.log("error: ", err);
+                  result(null, err);
+               }
+             else{   
+               result(null, res);
+               
+                  }
+              }); 
+           
+            
+  };  
+
+
 
 
 

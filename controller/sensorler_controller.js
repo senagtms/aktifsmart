@@ -47,7 +47,7 @@ module.exports.getAll = function (req, res) {
             err.message || "Some error occurred while creating the Tutorial."
         });
       else { 
-        res.render('./cihazdetay/sensorEkle', { alert: 'User added successfully.' , data: yenisensor});
+        res.render('./cihazdetay/sensorEkle', { alert: 'successfully.' , data: yenisensor});
             }
     
     });

@@ -53,8 +53,23 @@ module.exports.getAll = function (req, res) {
     });
   };
 
+//alarm aktif pasif etme controller
+module.exports.sensorUpdate = function (req, res) {
+  const aktifPasif = new sensorModel(req.body);
+  console.log('aktifPasif update', aktifPasif);
 
-
+  if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+      res.send(400).send({success: false});
+  }else{
+    sensorModel.updatee(req.params.id, aktifPasif, (err, result)=>{
+          if(err)
+          res.sendStatus(err);
+          res.render('./cihazdetay/alarm');
+         
+      })  
+  }     
+ 
+}
 
   /********************************* sensörler için controller ******************************/
 

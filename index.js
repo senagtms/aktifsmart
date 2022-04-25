@@ -14,6 +14,8 @@ app.set('views', path.join(__dirname, 'views')); //html sayfası için
 app.use(express.urlencoded({
   extended: true
 }));
+
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './public'))); //css dosyalar için
 

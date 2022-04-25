@@ -59,7 +59,7 @@ module.exports.sensorUpdate = function (req, res) {
   console.log('aktifPasif update', aktifPasif);
 
   if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-      res.send(400).send({success: false});
+      res.sendStatus({success: false});
   }else{
     sensorModel.updatee(req.params.id, aktifPasif, (err, result)=>{
           if(err)

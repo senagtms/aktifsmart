@@ -27,9 +27,13 @@
                       <td><%= data[i].sensorAdi%></td>
                       <td>
                         <form method="POST" action="/cihazlar/cihazdetay/alarm/<%= data[i].SensorCihazID%>">
-                          <% let sensorDurumu = data[i].sensorDurumu ? '1' : '0' %>
-                          <label class="switch"><input type="checkbox" id="<%= data[i].sensorID%>" name="sensorDurumu"  value="<%=sensorDurumu%>"  onChange="this.form.submit()"><span  class="slider round"  ></span></label>
-                        
+                          <%if(data[i].sensorDurumu==1){%>
+                          <label class="switch"><input type="checkbox"  name="sensorDurumu"  value="0"  checked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
+                          <input type="hidden" name="sensorID" value="<%= data[i].sensorID%>">
+                      <%} else{ %> 
+                          <label class="switch"><input type="checkbox" name="sensorDurumu"  value="1"  unchecked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
+                          <input type="hidden" name="sensorID" value="<%= data[i].sensorID%>">
+                          <% } %>
                      </form>
                   </td>
                   <td><%= data[i].sensorKodu%></td>
@@ -47,6 +51,5 @@
 </section>
       
 </section>
-
 
   <%- include('../partials/footer'); %>

@@ -11,7 +11,7 @@ module.exports.getAll = function (req, res,next) {
   module.exports.ekleForm= (req, res)=> {
     res.render('cihazEkle');
 }
-  // Kullacını oluştur ve kaydet
+  // Cihaz oluştur ve kaydet
 
    module.exports.getCreate = (req, res) => {
        

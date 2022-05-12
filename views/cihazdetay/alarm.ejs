@@ -26,19 +26,19 @@
                       <td><%= data[i].sensorID%> </td>
                       <td><%= data[i].sensorAdi%></td>
                       <td>
-                        <form method="POST" action="/cihazlar/cihazdetay/alarm/<%= data[i].SensorCihazID%>">
+                        <form method="POST" action="/cihazlar/alarm/<%= data[i].SensorCihazID%>">
                           <%if(data[i].sensorDurumu==1){%>
-                          <label class="switch"><input type="checkbox"  name="sensorDurumu"  value="0"  checked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
-                          <input type="hidden" name="sensorID" value="<%= data[i].sensorID%>">
+                          <label class="switch"><input type="checkbox"  name="sensorDurumu"  checked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
+                          <input type="hidden" name="sensorID"  value="<%= data[i].sensorID%>">
                       <%} else{ %> 
-                          <label class="switch"><input type="checkbox" name="sensorDurumu"  value="1"  unchecked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
+                          <label class="switch"><input type="checkbox" name="sensorDurumu"   unchecked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
                           <input type="hidden" name="sensorID" value="<%= data[i].sensorID%>">
                           <% } %>
                      </form>
                   </td>
                   <td><%= data[i].sensorKodu%></td>
                   <td><%= data[i].sensorOlusturmaTarih%></td>
-                  <td> <a  href="/cihazlar/cihazdetay/alarm/<%=data[i].SensorCihazID%>/<%=data[i].SensorCihazID%>"  class="btn btn-primary edit-btt btn-xs" data-toggle="tooltip"><i class="fa fa-pencil"> Geçmiş Detay</i></a></td>
+                  <td> <a  href="/cihazlar/alarm/<%=data[i].SensorCihazID%>/<%=data[i].SensorCihazID%>"  class="btn btn-primary edit-btt btn-xs" data-toggle="tooltip"><i class="fa fa-pencil"> Geçmiş Detay</i></a></td>
                   </tr><% } %>
                 </tbody>
               </table>
@@ -51,5 +51,6 @@
 </section>
       
 </section>
+
 
   <%- include('../partials/footer'); %>

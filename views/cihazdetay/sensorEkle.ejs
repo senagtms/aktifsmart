@@ -9,7 +9,7 @@
               <h4><i class="fa fa-angle-right"></i> Sensör Ekleme</h4>   
                     <div class="form-panel sensorekle" >
                         <div class=" form">
-                          <form class="cmxform form-horizontal style-form" id="commentForm" method="POST" action="/cihazlar/sensordetay/sensorEkle">
+                          <form class="cmxform form-horizontal style-form" id="commentForm" method="POST">
                             <div class="form-group ">
                                 <label for="sensorAdi" class="control-label col-lg-2">Sensör Adı</label>
                                 <div class="col-lg-6">
@@ -36,7 +36,18 @@
                                 </div>
                            
                               </div>
-                          
+                              <div class="form-group ">
+                                <label for="sensorDurumu" class="control-label col-lg-2" name="sensorDurumu">Sensor Durumu</label>
+                                <div class="col-lg-6">
+                                  <select class="form-control sensorDurumu" name="sensorDurumu">
+                    
+                                    <option value="1">Aktif</option>
+                                    <option value="0">Pasif</option>
+                                
+                                  </select>
+                                </div>
+                              </div>
+                             
                                 <div class="form-group">
                                   <div class="col-lg-offset-2 col-lg-10">
                                     <a href="/cihazlar/sensordetay/"><button  id="sensorEkle" class="btn btn-theme" type="submit">Kaydet</button></a>

@@ -1,0 +1,57 @@
+<%- include('../partials/header'); %>
+
+<section id="main-content">
+  <section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i>Alarm Detayları </h3>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="content-panel">
+           
+        
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Sensor Adı</th>
+                    <th>Sensor Durumu</th>
+                    <th>Sensor Kodu</th>
+                    <th>Oluşturma Tarih</th>
+                    <th>Geçmiş Gaz Sensör Detayları</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(var i = 0; i < data.length; i++) { %>
+                    <tr>
+  
+                      <td><%= data[i].sensorID%> </td>
+                      <td><%= data[i].sensorAdi%></td>
+                      <td>
+                        <form method="POST" action="/cihazlar/gaz/<%= data[i].SensorCihazID%>">
+                          <%if(data[i].sensorDurumu==1){%>
+                          <label class="switch"><input type="checkbox"  name="sensorDurumu"  checked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
+                          <input type="hidden" name="sensorID"  value="<%= data[i].sensorID%>">
+                      <%} else{ %> 
+                          <label class="switch"><input type="checkbox" name="sensorDurumu"   unchecked onChange="this.form.submit()"><span  class="slider round"  ></span></label>
+                          <input type="hidden" name="sensorID" value="<%= data[i].sensorID%>">
+                          <% } %>
+                     </form>
+                  </td>
+                  <td><%= data[i].sensorKodu%></td>
+                  <td><%= data[i].sensorOlusturmaTarih%></td>
+                    <!-- sonra düzelt -->
+                  <td> <a  href="/cihazlar/gaz/<%=data[i].SensorCihazID%>/<%=data[i].SensorCihazID%>"  class="btn btn-primary edit-btt btn-xs" data-toggle="tooltip"><i class="fa fa-pencil"> Geçmiş Detay</i></a></td>
+                  </tr><% } %>
+                </tbody>
+              </table>
+            </div>
+          </div> </div>
+          <!-- /col-md-12 -->
+
+
+                    
+</section>
+      
+</section>
+
+
+  <%- include('../partials/footer'); %>

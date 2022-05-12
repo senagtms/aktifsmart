@@ -30,7 +30,7 @@ module.exports.getAll = function (req, res) {
       });
     }
   
-    // Create a Tutorial
+
     const yenisensor = new sensorModel({
     
         sensorTipID: req.body.sensorTipID,
@@ -53,23 +53,26 @@ module.exports.getAll = function (req, res) {
     });
   };
 
-//alarm aktif pasif etme controller
 module.exports.sensorUpdate = function (req, res) {
+   
   const aktifPasif = new sensorModel(req.body);
-  console.log('aktifPasif update', aktifPasif);
-
-  if(req.body.constructor === Object && Object.keys(req.body).length === 0){
-      res.sendStatus({success: false});
-  }else{
-    sensorModel.updatee(req.params.id, aktifPasif, (err, result)=>{
+  if (aktifPasif.sensorDurumu) {
+    aktifPasif.sensorDurumu = "on";
+    aktifPasif.sensorDurumu = "1";
+  } else {
+    aktifPasif.sensorDurumu = "off";
+    aktifPasif.sensorDurumu = "0";
+  }
+  console.log('aktifPasif update --->' , aktifPasif.sensorDurumu,aktifPasif.sensorID);
+    sensorModel.updateToogle(aktifPasif, (err, data)=>{
           if(err)
-          res.sendStatus(err);
-          res.render('./cihazdetay/alarm');
+          res.send(err);
          
-      })  
-  }     
- 
+         res.render('./cihazdetay/alarm.ejs', {data: aktifPasif});  
+      }
+      )  
 }
+
 
   /********************************* sensörler için controller ******************************/
 

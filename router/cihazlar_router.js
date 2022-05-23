@@ -9,5 +9,9 @@ cihazlar_router.post('/cihazEkle', cihazController.getCreate);
 cihazlar_router.get('/cihazdetay/:id',cihazController.getCihazdetay);
 cihazlar_router.get('/:id',cihazController.delete);
 
+/***************** Cihaza ait kullanıcılar bölümü *********************/
+
+cihazlar_router.get('/cihazKullanicilar/:id',cihazController.cihazKullanici);
+
 
 module.exports=cihazlar_controller;

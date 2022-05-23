@@ -1,0 +1,46 @@
+<%- include('../partials/header'); %>
+
+<section id="main-content">
+  <section class="wrapper">
+    <h3><i class="fa fa-angle-right"></i>Alarm Detayları </h3>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="content-panel">
+            <a href="/cihazlar/kullaniciEkleCihaz/<%=data.cihazID%>"  type="submit" class="btn btn-info ekle"><i class="fa fa-plus"> Cihaza Kullanıcı Ekle</i></a></button>
+        
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Cihaz ID</th>
+                    <th>Kullanıcı ID</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Kullanıcı Soyadı</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(var i = 0; i < data.length; i++) { %>
+                    <tr>
+  
+                    <td><%= data[i].kullaniciCihazID %> </td>
+                    <td><%= data[i].cihazID%></td>
+                    <td><%= data[i].kullaniciID%></td>
+                    <td><%= data[i].kullaniciAdi%></td>
+                    <td><%= data[i].kullaniciSoyadi%></td>
+                
+                  </tr><% } %>
+                </tbody>
+              </table>
+            </div>
+          </div> </div>
+          <!-- /col-md-12 -->
+
+
+                    
+</section>
+      
+</section>
+
+
+  <%- include('../partials/footer'); %>
